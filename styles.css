@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.days {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  height: 500px;
+}
+
+.day {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  height: 25px;
+  background: transparent;
+}
+
+.hours {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  
+  width: 100%;
+  height: 100%;
+
+  border: black 3px solid;
+  border-radius: 999px;
+}
+
+.hour{
+  width: calc(100% / 24);
+  height: 100%;
+}
+
+.hour::before {
+  content: attr(id);
+}
+
+.hour.dead{
+  background: linear-gradient(80deg, transparent calc(50% - 2px), grey 50%, transparent calc(50% + 2px));
+  background-size: calc(100% / 3);
+  background-repeat: repeat-y repeat-x;
+}
+
+.hour.full-match{
+  background: green;
+}
+
+.hour.low-match{
+  background: yellow;
+}
