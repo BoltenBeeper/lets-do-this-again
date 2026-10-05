@@ -19,9 +19,13 @@ function populateHours(day) {
   console.log("Availability:", availability)
   console.log("")
 
-  for (const i in availability) {
+  for (let i = 0; i < 24; i++) {
     const newHour = document.createElement("div")
-    newHour.classList.add("hour", availability[i])
+    try {
+      newHour.classList.add("hour", availability[i])
+    } catch {
+      newHour.classList.add("hour", "error")
+    }
     newHour.id = i
     dayDiv.children[0].append(newHour)
   }

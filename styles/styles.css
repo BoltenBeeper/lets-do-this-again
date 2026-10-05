@@ -1,18 +1,15 @@
-* {
-  margin: 0;
-  padding: 0;
-  color: white;
-}
-
-body {
+#content {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
+}
 
-  background: #00092A;
+#week-label {
+  height: 200px;
 }
 
 .days {
@@ -20,33 +17,36 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10%;
+  /* gap: 10%; */
   
   width: 70%;
-  height: 500px;
+  height: 700px;
 }
 
 .day {
   display: flex;
   flex-direction: row;
-  width: 90%;
-  height: 25px;
+  justify-content: space-between;
+
+  width: 100%;
+  margin-block: 25px;
   background: transparent;
 }
 
 .day::before {
   content: attr(id);
   font-size: 1.5em;
-  margin-right: 50px;
+  margin-right: 10px;
 }
 
 .hours {
   display: flex;
   flex-direction: row;
   overflow: hidden;
-  
-  width: 100%;
-  height: 100%;
+  box-sizing: border-box;
+
+  width: 70%;
+  height: 35px;
 
   border: white 3px solid;
   border-radius: 999px;
@@ -62,17 +62,15 @@ body {
 
   display: block;
   position: absolute;
-  
-  witdh: 100px;
-  height: 100px;
-  translate: calc(100% / 2) -25px;
+
+  width: inherit;
+  translate: calc(100% / 5.5) -25px;
 }
 
 .hour.dead{
   background: linear-gradient(70deg, transparent calc(50% - 2px), grey 50%, transparent calc(50% + 2px));
   background-size: calc(100% / 3);
   background-repeat: repeat-y repeat-x;
-  
 }
 
 .hour.full-match{
@@ -81,4 +79,10 @@ body {
 
 .hour.low-match{
   background: radial-gradient(transparent 70%, rgba(0, 0, 0, .3) 100%), #FCF68A;
+}
+
+.hour.error{
+  background: linear-gradient(90deg, black 0%, black 49%, rgb(255, 123, 224) 50%, rgb(255, 123, 224) 100%);
+  background-size: calc(100% / 2);
+  background-repeat: repeat-y repeat-x;
 }
