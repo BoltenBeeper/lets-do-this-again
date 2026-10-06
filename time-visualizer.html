@@ -4,13 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Time Visualizer</title>
-  <link rel="icon" type="image/x-icon" href="./images/clock-face-tiny.png">
+  <link rel="icon" type="image/x-icon" href="./images/clock-face-50x50.png">
   
-  <link rel="stylesheet" href="./styles/styles.css">
   <link rel="stylesheet" href="./styles/general.css">
+  <link rel="stylesheet" href="./styles/nav-bar.css">
+  <link rel="stylesheet" href="./styles/styles.css">
 </head>
 
 <body>
+
+  <header id="nav-bar">
+
+    <div id="nav-bar-content">
+      
+      <section id="left-section">
+        <img id="clock-icon" src="./images/clock-face-500x500.png" alt="">
+        <h1 id="title">Availability Visualizer</h1>
+      </section>
+
+      <section id="nav-buttons"></section>
+
+      <section id="nav-buttons">
+        <div id="data-upload-container">
+          <label id="upload-label" for="upload-input">
+            <img class="nav-icon" id="upload-icon" src="./images/upload-500x500.png" alt="Upload">
+          </label>
+          <input id="upload-input" type="file">
+        </div>
+      </section>
+
+    </div>
+
+  </header>
 
   <div id="content">
     <h1 id="week-label">Week: 10/5/26 - 10/12/26</h1>
