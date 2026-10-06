@@ -30,3 +30,35 @@ function populateHours(day) {
     dayDiv.children[0].append(newHour)
   }
 }
+
+//Debugging:
+
+const overlay = document.querySelector(".overlay")
+
+function toggleOverlay() {
+  if (overlay.style.display == "none") {
+    overlay.style.display = "flex"
+  } else {
+    overlay.style.display = "none"
+  }
+}
+
+// For taking screenshot file:
+
+const screenshotPreview = document.getElementById("screenshot-preview")
+const fileInput = document.getElementById("upload-input")
+let selectedFile
+let imageURL
+
+fileInput.addEventListener('change', function(event) {
+            const files = event.target.files;
+
+            if (files && files.length > 0) {
+                selectedFile = files[0];
+                imageURL = URL.createObjectURL(selectedFile);
+
+                screenshotPreview.src = imageURL;
+            }
+        });
+
+// Analyzing image:

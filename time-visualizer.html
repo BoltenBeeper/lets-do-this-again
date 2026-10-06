@@ -13,6 +13,10 @@
 
 <body>
 
+  <div class="overlay">
+    <img id="screenshot-preview" src="" alt="">
+  </div>
+
   <header id="nav-bar">
 
     <div id="nav-bar-content">
@@ -25,12 +29,18 @@
       <section id="nav-buttons"></section>
 
       <section id="nav-buttons">
+
+        <div id="debug-toggle" onclick="toggleOverlay()">
+          <p>Debug</p>
+        </div>
+
         <div id="data-upload-container">
           <label id="upload-label" for="upload-input">
             <img class="nav-icon" id="upload-icon" src="./images/upload-500x500.png" alt="Upload">
           </label>
-          <input id="upload-input" type="file">
+          <input id="upload-input" type="file" accept="image/*">
         </div>
+
       </section>
 
     </div>
