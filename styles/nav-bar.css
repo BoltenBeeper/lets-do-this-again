@@ -55,8 +55,3 @@ section {
 #upload-input {
   display: none;
 }
-
-#upload-input::file-selector-button {
-  border: none;
-  background-color: transparent;
-}
