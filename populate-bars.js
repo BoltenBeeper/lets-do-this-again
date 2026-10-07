@@ -60,29 +60,3 @@ fileInput.addEventListener('change', function(event) {
                 screenshotPreview.src = imageURL;
             }
         });
-
-// Analyzing image:
-
-import OpenAI from "openai";
-
-const openai = new OpenAI();
-
-const response = await openai.responses.create({
-  model: "gpt-6-astra",
-  input: [
-    {
-      role: "user",
-      content: [
-        { type: "input_text", text: "what's in this image?" },
-        {
-          type: "input_image",
-          image_url:
-            "https://api.nga.gov/iiif/a2e6da57-3cd1-4235-b20e-95dcaefed6c8/full/!800,800/0/default.jpg",
-          detail: "auto",
-        },
-      ],
-    },
-  ],
-});
-
-console.log(response.output_text);

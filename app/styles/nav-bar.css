@@ -1,0 +1,57 @@
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#nav-bar {
+  width: 100%;
+  position: absolute;
+
+  background: #6A4DA7;
+}
+
+#nav-bar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 76px;
+  width: auto;
+  padding-inline: 15px;
+}
+
+/* Left section */
+
+#clock-icon {
+  width: 70px;
+  aspect-ratio: 1/1;
+}
+
+/* Right Section */
+
+/* #data-upload-container {
+  background: url(../images/clock-face-500x500.png);
+} */
+
+.nav-icon {
+  box-sizing: border-box;
+  width: 54px;
+  aspect-ratio: 1/1;
+
+  padding: 5px;
+  border: 3px solid black;
+  border-radius: 5px;
+}
+
+#upload-label {
+  display: flex;
+}
+
+#upload-icon:hover {
+  cursor: pointer;
+}
+
+#upload-input {
+  display: none;
+}

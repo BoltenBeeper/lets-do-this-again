@@ -1,0 +1,88 @@
+#content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  width: 100%;
+  height: 100%;
+}
+
+#week-label {
+  height: 200px;
+}
+
+.days {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* gap: 10%; */
+  
+  width: 70%;
+  height: 700px;
+}
+
+.day {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  width: 100%;
+  margin-block: 25px;
+  background: transparent;
+}
+
+.day::before {
+  content: attr(id);
+  font-size: 1.5em;
+  margin-right: 10px;
+}
+
+.hours {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  box-sizing: border-box;
+
+  width: 70%;
+  height: 35px;
+
+  border: white 3px solid;
+  border-radius: 999px;
+}
+
+.hour{
+  width: calc(100% / 24);
+  height: 100%;
+}
+
+.hour::before {
+  content: attr(id);
+
+  display: block;
+  position: absolute;
+
+  width: inherit;
+  translate: calc(100% / 5.5) -25px;
+}
+
+.hour.dead{
+  background: linear-gradient(70deg, transparent calc(50% - 2px), grey 50%, transparent calc(50% + 2px));
+  background-size: calc(100% / 3);
+  background-repeat: repeat-y repeat-x;
+}
+
+.hour.full-match{
+  background: radial-gradient(transparent 70%, rgba(0, 0, 0, .3) 100%), #6CFFA6;
+}
+
+.hour.low-match{
+  background: radial-gradient(transparent 70%, rgba(0, 0, 0, .3) 100%), #FCF68A;
+}
+
+.hour.error{
+  background: linear-gradient(90deg, black 0%, black 49%, rgb(255, 123, 224) 50%, rgb(255, 123, 224) 100%);
+  background-size: calc(100% / 2);
+  background-repeat: repeat-y repeat-x;
+}
