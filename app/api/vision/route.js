@@ -16,7 +16,7 @@ export async function POST(request) {
         {
           role: "user",
           content: [
-            { type: "input_text", text: "Describe this image in four words only. Do not use any punctuation whatsoever." },
+            { type: "input_text", text: "Say hello, then name a color in this image." },
             {
               type: "input_image",
               image_url: imageUrl,
@@ -28,7 +28,7 @@ export async function POST(request) {
     });
 
     return new NextResponse(
-      response.output_text
+      JSON.stringify(response.output[0].content[0].text)
     );
   } catch (error) {
     return new NextResponse(JSON.stringify(error));

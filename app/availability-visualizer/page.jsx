@@ -31,18 +31,53 @@ function AvailabilityVisualizer() {
     }
   }
   
-  const [selectedFile, setSelectedFile] = useState(null);
-  const [imageURL, setImageURL] = useState("null");
+  const [selectedFile, setSelectedFile] = useState(null)
+  const [imageURL, setImageURL] = useState("null")
 
-  const handleFileChange = (event) => {
+  async function handleFileChange(event) {
+    setLoading(true), setError(null), setResposne(null)
     const files = event.target.files;
     if (files && files.length > 0) {
-      const file = files[0];
-      setSelectedFile(file);
+
+      const file = files[0]
+      setSelectedFile(file)
       
-      // Create and set the preview URL
-      const url = URL.createObjectURL(file);
-      setImageURL(url);
+      const url = URL.createObjectURL(file)
+      setImageURL(url)
+      const reader = new FileReader()
+
+      reader.onloadend = async () => {
+        const base64ImageData = reader.result
+
+        try {
+          const res = await fetch("/api/vision", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ imageUrl: base64ImageData })
+          })
+
+          if (!res.ok) {
+            throw new Error("GPT API call failed to fetch.")
+          }
+
+          const data = await res.json()
+          console.log(data)
+          setResposne(data)
+          return data
+          
+        } catch (error) {
+          setError(error.message)
+          console.log("From Riley:\n", error)
+        } finally {
+          setLoading(false)
+          console.log("Fetch code finished running.")
+        }
+        // URL.revokeObjectURL(url)
+        }
+      
+      reader.readAsDataURL(file)
     }
   };
 
