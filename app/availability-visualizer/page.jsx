@@ -13,11 +13,7 @@ function AvailabilityVisualizer() {
   const [error, setError] = useState(null)
   const [response, setResposne] = useState(null)
 
-  const [availabilityData, setAvailabilityData] = useState({
-  monday: ["dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "low-match", "low-match", "full-match", "full-match"],
-  
-  tuesday: ["full-match", "full-match", "low-match", "low-match", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead"]
-})
+  const [availabilityData, setAvailabilityData] = useState({})
 
   const formik = useFormik({
     initialValues: {

@@ -8,7 +8,7 @@ export function WeekDay({ day, availabilityData }) {
       <div className="hours">
         {Array.from({length: 24}, (_, index) => {
           let uniqueKey = day + "_hour:" + index
-          return  <div className={availability?.[index] ? `hour ${availability[index]}` : "hour error"} key={uniqueKey}></div>
+          return  <div className={availability?.[index] ? `hour ${availability[index]}` : "hour error"} id={index < 13 ? index: index - 12} key={uniqueKey}></div>
         })}
       </div>
     </div>

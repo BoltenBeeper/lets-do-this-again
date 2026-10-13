@@ -3,7 +3,10 @@
 Time tracking app for me and my friend to help visualize when our schedules overlap.
 
 
-To do:
+
+TO DO:
+
+- Needs:
 [X] - Make a horizontal bar to represewnt each day of the week.
 [X]   - Make each bar consist of 24 labled segments. With each segment representing an hour.
 [X]   - Color code each hour segment to show better or worse times for meeting.
@@ -14,9 +17,15 @@ To do:
 [X] - Add a button to import image files.
 [X]   - Add a debug mode to show the image submitted.
 [X] - Write code to make a call to a VLLM to extract data from schedule screenshots and return the data about the image.
-[ ]   - Ensure format always arrives in workable json format for easier working.
+[X]   - Ensure format always arrives in workable json format for easier working.
+[ ]   - Refine API prompt to always generate the same output everytime and also not suck and be wrong.
 [ ] - Write a function to compare sets of availability data from multiple people and return a single data set of 24 idevidual markers of that hours availability. Return 7 of those to make up the whole week.
 [ ] - Serve page through one entry point and host publically for my friends and I to use from anywhere.
+
+- Wants:
+[ ] - Add "overide bar" at top of page for user to select times they want to automatically count as unavailable/"dead" for all days of the week.
+[ ] - Allow user to toggle indevidual hour availability to unavailable/"dead" for each indevidual day of the week.
+[ ] - Let user submit multiple files at once and handle all of them at once.
 
 Dependencies:
 Command: npm i yup formik openai
