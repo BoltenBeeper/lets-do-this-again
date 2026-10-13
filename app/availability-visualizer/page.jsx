@@ -3,6 +3,8 @@ import { useState, useEffect  } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
+import { WeekBars, WeekDay } from "./week-bars"
+
 import "../styles"
 // import { clockFaceBig, uploadIcon } from "../../public/images"
 
@@ -10,6 +12,12 @@ function AvailabilityVisualizer() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
   const [response, setResposne] = useState(null)
+
+  const [availabilityData, setAvailabilityData] = useState({
+  monday: ["dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "low-match", "low-match", "full-match", "full-match"],
+  
+  tuesday: ["full-match", "full-match", "low-match", "low-match", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead", "dead"]
+})
 
   const formik = useFormik({
     initialValues: {
@@ -123,44 +131,7 @@ function AvailabilityVisualizer() {
       <div id="content">
         <h1 id="week-label">Week: 10/5/26 - 10/12/26</h1>
 
-        <div className="days">
-          
-          <div className="day" id="monday">
-            <div className="hours">
-            </div>
-          </div>
-
-          <div className="day" id="tuesday">
-            <div className="hours">
-            </div>
-          </div>
-
-          <div className="day" id="wednesday">
-            <div className="hours">
-            </div>
-          </div>
-
-          <div className="day" id="thursday">
-            <div className="hours">
-            </div>
-          </div>
-
-          <div className="day" id="friday">
-            <div className="hours">
-            </div>
-          </div>
-
-          <div className="day" id="saturday">
-            <div className="hours">
-            </div>
-          </div>
-
-          <div className="day" id="sunday">
-            <div className="hours">
-            </div>
-          </div>
-
-        </div>
+        <WeekBars availabilityData={availabilityData}></WeekBars>
 
       </div>
     </div>
