@@ -70,10 +70,13 @@ function AvailabilityVisualizer() {
             throw new Error("GPT API call failed to fetch.")
           }
 
+          // const rawData = await res
+          
           const data = await res.json()
           console.log(data)
           setResposne(data)
-          return data
+          setAvailabilityData(JSON.parse(data))
+          // return data
           
         } catch (error) {
           setError(error.message)
