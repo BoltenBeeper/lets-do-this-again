@@ -1,2 +1,19 @@
+@import "dynamatic/dist/styles/theme.css";
+@import "dynamatic/dist/styles/core.css";
+@import "dynamatic/dist/styles/components/Section.css";
 @import "tailwindcss";
 
+@theme {
+    --color-theme-primary-face: var(--theme-primary-face);
+    --color-theme-primary: var(--theme-primary);
+    --color-theme-primary-base: var(--theme-primary-base);
+    --color-theme-secondary: var(--theme-secondary);
+    --color-theme-tertiary: var(--theme-tertiary);
+    --color-theme-accent: var(--theme-accent);
+    --color-theme-base: var(--theme-base);
+    --color-theme-offset: var(--theme-offset);
+    --color-theme-contrast: var(--theme-contrast);
+    --color-theme-head: var(--theme-head);
+    --color-theme-face: var(--theme-face);
+    --color-theme-body: var(--theme-body);
+}
