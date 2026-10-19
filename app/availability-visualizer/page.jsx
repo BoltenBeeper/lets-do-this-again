@@ -2,6 +2,8 @@
 import { useState, useEffect  } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { tokenBuilder } from "dynamatic/src/scripts/main";
+import theme from "../theme.json"
 
 import { WeekBars, WeekDay } from "./week-bars"
 
@@ -89,10 +91,11 @@ function AvailabilityVisualizer() {
   };
 
   return (
-    <div>
+    <div data-scheme="preferred">
       <div className="overlay" style={{display: overlayDisplay}}>
         <div id="overlay-background" onClick={toggleOverlay}></div>
         <img id="screenshot-preview" src={imageURL} alt="No Image uploaded"></img>
+        <style id="theme">{tokenBuilder(theme)}</style>
       </div>
 
       <header id="nav-bar">
@@ -101,7 +104,7 @@ function AvailabilityVisualizer() {
           
           <section id="left-section">
             <img id="clock-icon" src="/images/clock-face-500x500.png" alt=""></img>
-            <h1 id="title">Availability Visualizer</h1>
+            <h1 id="title" class="h3">Availability Visualizer</h1>
           </section>
 
           <section id="nav-buttons"></section>

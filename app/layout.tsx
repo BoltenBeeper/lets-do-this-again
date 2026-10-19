@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { tokenBuilder } from "dynamatic/src/scripts/main";
+import theme from "./theme.json"
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import dynamic from "next/dynamic";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,7 +31,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
         <title>Time Visualizer</title>
         <link rel="icon" type="image/x-icon" href="./images/clock-face-50x50.png"></link>
-        <style id="theme">{tokenBuilder()}</style>
+        <style id="theme">{tokenBuilder(theme)}</style>
     </head>
       <body className="min-h-full flex flex-col">
         {children}

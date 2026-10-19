@@ -28,7 +28,8 @@ TO DO:
 [ ] - Let user submit multiple files at once and handle all of them at once.
 
 Dependencies:
-Command: npm i yup formik openai
+- Packages: npm i yup formik openai dynamatic
+  ("npm i" should automatically install all of these)
 - Next.js
 - React.js
 
